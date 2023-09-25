@@ -2,10 +2,8 @@
 name = "ppt2pdfwithnotes"
 version = "0.1.0"
 description = "Add your description here"
-authors = [
-    { name = "Pheema", email = "Pheema@users.noreply.github.com" }
-]
-dependencies = []
+authors = [{ name = "Pheema", email = "Pheema@users.noreply.github.com" }]
+dependencies = ["pywin32>=306"]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -15,7 +13,10 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = ["black>=23.9.1", "flake8>=5.0.4"]
+
+[tool.rye.scripts]
+convert = { call = "ppt2pdfwithnotes.main:main" }
 
 [tool.hatch.metadata]
 allow-direct-references = true
